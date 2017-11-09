@@ -8,7 +8,7 @@ c_name = ["dt", "year", "month", "week", "weekdays", "source_type", "biz_unit", 
           "category_lvl2_name", "category_lvl3_name", "supplier_name", "brand_name", "topic_name", "topic_type_name",
           "province_name", "city_name","is_black","p_orders", "order_amt", "total_coupon"]
 
-gmv = pd.read_csv('/home/xubinbin/total.txt', header=0, sep=',', quotechar='"', encoding='utf-8',
+gmv = pd.read_csv('/home/fannian/total.txt', header=0, sep=',', quotechar='"', encoding='utf-8',
                   names=c_name)  # 文件路径里的“\”要改成“/”否则会提示unicodeescape' codec can't decode bytes in position 7-8: truncated \xXX escape
 
 ntest = pd.DataFrame(columns=['pname', 'F', 'P_VALUE', 'Q95'])  # 创建一个空的数据框存放正态分布的F检验和95%的分位数
@@ -59,6 +59,6 @@ for pname in ["source_type", "biz_unit", "end sea_type", "category_lvl1_name",
 score=score.sort(["dt","dif_score"],ascending=False)
 score_result=score_result.sort(["dt","dif_score"],ascending=False)
 
-ntest.to_csv('/home/xubinbin/ntest.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
-score.to_csv('/home/xubinbin/score.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
-score_result.to_csv('/home/xubinbin/score_result.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
+ntest.to_csv('/home/fannian/ntest.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
+score.to_csv('/home/fannian/score.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
+score_result.to_csv('/home/fannian/score_result.csv',sep=',',header=True,index=False,mode='w',encoding='utf-8')
